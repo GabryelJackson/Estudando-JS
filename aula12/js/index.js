@@ -3,4 +3,4 @@ let num2 = prompt('Digite outro número')
 num1 = Number(num1)
 num2 = Number(num2)
 let resultado = num1 + num2
-console.log('O resultado foi:', resultado)
+alert(`O resultado foi: ${resultado}`)
