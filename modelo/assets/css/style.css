@@ -76,11 +76,12 @@ form button:hover {
     background-color: var(--cor3);
 }
 
-.paragrafoResultado, .bad {
+.paragrafoResultado {
     background-color: var(--cor5);
     padding: 10px 20px;
 }
 
 .bad {
+    padding: 10px 20px;
     background-color: var(--cor3);
 }
