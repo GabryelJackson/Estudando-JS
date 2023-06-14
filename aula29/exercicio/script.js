@@ -28,9 +28,3 @@ function meuEscopo() {
     form.addEventListener('submit', formataData)
 }
 meuEscopo();
-
-const diaAtual = new Date();
-const dataPassada = new Date (2023, 5, 6);
-const dataEmMilissegundos = Math.abs(diaAtual.getTime() - dataPassada.getTime());
-const diasDeDiferenca = Math.ceil(dataEmMilissegundos/(1000 * 60 * 60 * 24));
-console.log(`A diferença de dias é ${diasDeDiferenca}`);
