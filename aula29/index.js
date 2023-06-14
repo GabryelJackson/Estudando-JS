@@ -21,7 +21,7 @@ function zeroAEsqurda(num) { // poderia fazer assim tbm: num >= 10 ? num : `0${n
     if(num >= 10) {
         return num;
     } else {
-        return `0${num}` 
+        return `0${num}`;
     }
 }   
 
@@ -33,7 +33,7 @@ function formataData(data) {
     const min = zeroAEsqurda(data.getMinutes());
     const seg = zeroAEsqurda(data.getSeconds());
 
-    return `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`
+    return `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`;
     // console.log(data);
 }
 
