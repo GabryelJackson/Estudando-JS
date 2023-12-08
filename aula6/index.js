@@ -6,6 +6,6 @@
 // Case-sensitive (leta maiúscula e minúscula faz diferença).
 // não podemos redeclarar variáveis com let.
 // Não utilize var, utilize let.
-let nomeCliente = 'Luiz'
-let nomecliente = 'Otávio'
-console.log(nomeCliente, nomecliente)
+let nomeCliente = 'Luiz';
+let nomecliente = 'Otávio';
+console.log(nomeCliente, nomecliente);
