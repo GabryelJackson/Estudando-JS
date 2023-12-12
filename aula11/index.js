@@ -29,9 +29,10 @@
     parseFloat - Converte uma string para um número com casas decimais
 
 */
-const num1 = 10
-const num2 = Number('5.3')
-console.log(num1 + num2)
-console.log(typeof num2)
+const num1 = 10;
+const num2 = parseFloat('6.7');
+
+console.log(num1 + num2);
+console.log(typeof num2);
 
 
