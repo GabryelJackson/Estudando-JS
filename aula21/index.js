@@ -4,11 +4,12 @@
 */
 
 const a = {
-    nome: 'Gabryel',
-    sobrenome: 'Jackson'
-}
+    nome: 'Pikachu',
+    tipo: 'Raio'
+};
 
-const b = a
+const b = a;
+console.log(a, b);
 
-b.nome = 'Samuel'
-console.log(a)
+b.nome = 'Charmander';
+console.log(a, b);
