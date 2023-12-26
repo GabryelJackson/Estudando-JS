@@ -10,9 +10,9 @@
 
 function criaPokemon(nome, tipo, numero) {
     return {
-        nome: nome,
-        tipo: tipo,
-        numero: numero,
+        nome,
+        tipo,
+        numero,
     };
 };
 
