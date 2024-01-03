@@ -17,4 +17,4 @@ console.log(expressao);
 const dado1 = 65;
 const dado2 = 65;
 
-console.log(dado1 !== dado2);
+console.log(dado1 !== dado2); 
