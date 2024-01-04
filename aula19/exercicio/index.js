@@ -4,6 +4,6 @@ function saudacao() {
 
 saudacao();
 
-const pokemon = (nome) => `${nome} você foi eescolhido, VAI!`
+const pokemon = (nome) => `${nome} você foi eescolhido, VAI!`;
 
 console.log(pokemon("Zubat"))
