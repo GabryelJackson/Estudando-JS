@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --cor1: #af0745;
+    --cor2: #fa4069;
+    --cor3: #fe9c6b;
+    --cor4: #fcda90;
+    --cor5: #c8b080;
+    --font: "Roboto", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor1);
+    font-family: var(--font);
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: var(--cor4);
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background-color: var(--cor2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tabela {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tabela1 {
+    text-align: start;
+}
+
+#tabela2 {
+    text-align: end;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0px 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--cor4);
+}
+
+form button {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+form button:hover {
+    color: var(--cor1);
+    background-color: var(--cor4);
+}
+
+.paragrafoResultado {
+    background-color: var(--cor1);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.bad {
+    padding: 10px 20px;
+    background-color: var(--cor3);
+}
