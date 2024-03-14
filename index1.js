@@ -1,31 +1,35 @@
-const data = new Date();
-const diaDaSemana = data.getDay();
-let diaDaSemanaTexto;
+const data1 = new Date();
+const mudarData = data1.getDay();
+let diaDaSemanaTexto1;
+const h1 = document.querySelector('.container h1');
+h1.innerHTML = dayOfWeek(mudarData);
 
-switch (diaDaSemana) {
-    case 0:
-        diaDaSemanaTexto = 'Domingo';
-        break;
-    case 1:
-        diaDaSemanaTexto = 'Segunda';
-        break;
-    case 2:
-        diaDaSemanaTexto = 'Terça';
-        break;
-    case 3:
-        diaDaSemanaTexto = 'Quarta';
-        break;
-    case 4:
-        diaDaSemanaTexto = 'Quinta';
-        break;
-    case 5:
-        diaDaSemanaTexto = 'Sexta';
-        break;
-    case 6:
-        diaDaSemanaTexto = 'Sábado';
-        break;
+function dayOfWeek(mudarData) {
+    switch(mudarData) {
+        case 0: 
+            diaDaSemanaTexto1 = 'Domingo';
+            break;
+        case 1: 
+            diaDaSemanaTexto1 = 'Segunda';
+            break;
+        case 2: 
+            diaDaSemanaTexto1 = 'Teça';
+            break;
+        case 3: 
+            diaDaSemanaTexto1 = 'Quarta';
+            break;
+        case 4: 
+            diaDaSemanaTexto1 = 'Quinta';
+            break;
+        case 5: 
+            diaDaSemanaTexto1 = 'Sexta';
+            break;
+        case 6: 
+            diaDaSemanaTexto1 = 'Sábado';
+            break;
+    }
+    return diaDaSemanaTexto1;
 }
 
-console.log(diaDaSemana, diaDaSemanaTexto);
-
+console.log(data1, mudarData, dayOfWeek(mudarData));
 
