@@ -1,20 +1,23 @@
+// let control = 0;
+
+// while (control <= 10) {
+//     console.log(control);
+//     control++;
+// }
+
 function random(min, max) {
-    const r = Math.random() * (max - min) + min;
-    return Math.floor(r);
+    const aleatory = Math.random() * (max - min) + min;
+    return Math.floor(aleatory);
 }
 const min = 1;
 const max = 50;
-let rand = random(min, max);
 
+let infrequent = random(min, max);
+console.log(infrequent);
 
-while(rand !== 10) {
-    rand = random(min, max);
-    console.log(rand);
-}
-
-console.log('########')
+console.log('!!!!!!!!!!!!!!!!!!!!!!!!');
 
 do {
-    rand = random(min, max);
-    console.log(rand);
-} while (rand !== 10);
+    infrequent = random(min, max);
+    console.log(infrequent);
+} while (infrequent !== 10);
