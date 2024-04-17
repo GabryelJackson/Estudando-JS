@@ -9,6 +9,7 @@ function random(min, max) {
     const aleatory = Math.random() * (max - min) + min;
     return Math.floor(aleatory);
 }
+
 const min = 1;
 const max = 50;
 
