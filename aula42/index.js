@@ -8,6 +8,6 @@ function twoNumbers(x, y) {
     }
 }
 // Trabalho de preguiçoso
-const function2 = (x, y) => x > y ? x : y;
+const function2 = (x, y) => x > y ? x : y; /* Arrow Function*/
 console.log(function2(54, 423));
 
