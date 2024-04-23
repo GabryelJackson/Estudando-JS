@@ -1,18 +1,15 @@
 // Escreva uma função chamada ePaisagem que recebe dois argumentos, largura e altura de uma imagem (number). Retorne true se a imagem estiver no modo paisagem.
 
-function ePaisagem() {
-    const alturaPaisagem = 1080;
-    const larguraPaisagem = 1920;
-
-    const altura = 1080;
-    const largura = 1920;
-
-    if(altura === alturaPaisagem && largura === larguraPaisagem) {
+function ePaisagem(largura, altura) {
+    if(largura === 1920 & altura === 1080) {
         return true;
     } else {
         return false;
     }
-    
 }
 
-console.log(ePaisagem());
+console.log(ePaisagem(1080, 1920));
+
+// Trabalho de preguiçoso
+const ePaisagem2 = (largura, altura) => largura === 1920 & altura === 1080 ? true : false;
+console.log(ePaisagem2(1920, 1080));
