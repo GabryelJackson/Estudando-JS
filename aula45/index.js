@@ -5,7 +5,6 @@ function soma(x, y) {
 
     return x + y;
 }
-
 try {
     console.log(soma(3, 5));
     console.log(soma('3', 5));
