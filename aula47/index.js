@@ -9,9 +9,9 @@ const timer = setInterval(function () {
 }, 1000);
 
 setTimeout(function() {
-    clearInterval(timer)
-}, 10000);
-
-setTimeout(function() {
     console.log('Olá Mundo!')
 }, 5000);
+
+setTimeout(function() {
+    clearInterval(timer)
+}, 10000);
