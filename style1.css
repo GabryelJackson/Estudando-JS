@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #d1db72;
+    font-size: 1.7em;
+}
+
+section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div h1, h2, button {
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
