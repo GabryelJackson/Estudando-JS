@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 :root {
-    --cor1: #f3ffeb;
-    --cor2: #acc95f;
-    --cor3: #f1396d;
-    --cor4: #fd6081;
-    --cor5: #8f9924;
+    --cor1: #11644d;
+    --cor2: #a0b046;
+    --cor3: #f2c94e;
+    --cor4: #f78145;
+    --cor5: #f24e4e;
     --fonte1: 'Abel', sans-serif;
 }
 
@@ -91,5 +91,5 @@ form button:hover {
 }
 
 .pausado {
-    color: var(--cor3);
+    color: var(--cor5);
 }
