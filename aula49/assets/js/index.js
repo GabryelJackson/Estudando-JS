@@ -2,11 +2,6 @@ const inputNovaTarefa = document.querySelector('.inputNovaTarefa');
 const btnAddTarefa = document.querySelector('.btnAddTarefa');
 const tarefas = document.querySelector('.tarefas');
 
-function criaLi() {
-    const li = document.createElement('li');
-    return li;
-}
-
 btnAddTarefa.addEventListener('click', function() {
     if(inputNovaTarefa.value === '') {
         alert('Lembre-se de adicionar uma tarefa.');
@@ -14,14 +9,6 @@ btnAddTarefa.addEventListener('click', function() {
         criaTarefa(inputNovaTarefa.value);
     }
 });
-
-function criaTarefa(textoDoInput) {
-    const li = criaLi();
-    li.innerHTML = textoDoInput;
-    tarefas.appendChild(li);
-    limpaInput();
-    criaBotaoApagar(li);
-}
 
 inputNovaTarefa.addEventListener('keypress', function(e) {
     if(e.keyCode === 13) {
@@ -33,24 +20,50 @@ inputNovaTarefa.addEventListener('keypress', function(e) {
     }
 });
 
+function criaLi() {
+    const li = document.createElement('li');
+    return li;
+}
+
 function limpaInput() {
     inputNovaTarefa.value = '';
     inputNovaTarefa.focus();
 }
 
-function criaBotaoApagar(li) {
+function botaoApagar(li) {
     li.innerHTML += ' ';
     const botaoApagar = document.createElement('button');
     botaoApagar.innerHTML = 'Apagar';
-    botaoApagar.setAttribute('class', 'apagar');
     li.appendChild(botaoApagar);
+    botaoApagar.setAttribute('class', 'botaoApagar');
+    botaoApagar.setAttribute('title', 'Apagar Tarefa');
     botaoApagar.addEventListener('click', function(e) {
         const el = e.target;
         console.log(el.parentElement);
-
-        if(el.classList.contains('apagar')) {
+        if(el.classList.contains('botaoApagar')) {
             el.parentElement.remove();
         }
     });
 }
 
+function salvarTarefas() {
+    const liTarefas = tarefas.querySelectorAll('li');
+    const listaDeTarefas = [];
+
+    for(let tarefa of liTarefas) {
+        let tarefaTexto = tarefa.innerText;
+        tarefaTexto = tarefaTexto.replace('Apagar', '').trim();
+        console.log(tarefaTexto);
+        listaDeTarefas.push(tarefaTexto);
+        console.log(listaDeTarefas)
+    }
+}
+
+function criaTarefa(textoDoInput) {
+    const li = criaLi();
+    li.innerHTML = textoDoInput;
+    tarefas.appendChild(li);
+    limpaInput();
+    botaoApagar(li);
+    salvarTarefas();
+}
