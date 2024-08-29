@@ -2,12 +2,12 @@
 
 (function (idade, peso, altura) {
     const sobrenome = 'Sacramento';
-    function criaNome(nome) {
-        return nome + ' ' + sobrenome;
-   }
+    function falaNome() {
+        console.log(criaNome('Gabryel'));
+    }
 
-   function falaNome() {
-    console.log(criaNome('Gabryel'));
+    function criaNome(nome) {
+        return `${nome} ${sobrenome}`;
    }
 
    falaNome();

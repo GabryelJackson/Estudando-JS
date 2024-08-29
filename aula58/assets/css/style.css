@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 :root {
-    --cor1: #9cd6c8;
-    --cor2: #f1ffcf;
-    --cor3: #f8df82;
-    --cor4: #fac055;
-    --cor5: #e57c3a;
+    --cor1: #574d4f;
+    --cor2: #ffffff;
+    --cor3: #969091;
+    --cor4: #ffe999;
+    --cor5: #ffd952;
     --fonte1: 'Abril Fatface', cursive;
 }
 
@@ -103,7 +103,7 @@ form button:hover {
     height: 50px;
     font-size: 1em;
     border: none;
-    background-color: #e57c3a83;
+    background-color: var(--cor4);
     cursor: pointer;
 }
 
