@@ -1,7 +1,3 @@
-function sim () {
-    
-}
-
 function desvia() {
     let botaoNao = document.querySelector('.nao');
     botaoNao.style.position = 'absolute';
