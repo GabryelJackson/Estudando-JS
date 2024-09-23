@@ -1,8 +1,8 @@
 function recursiva(max) {
     console.log(max);
-    if(max >= 1000) return;
+    if(max >= 100) return;
     max++;
     recursiva(max);
 }
 
-recursiva(0);
+recursiva(59);
