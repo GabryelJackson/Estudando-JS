@@ -1,5 +1,5 @@
 function sim () {
-    alert('Vamo pra cima minha vida <3');
+    
 }
 
 function desvia() {

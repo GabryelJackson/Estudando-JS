@@ -52,6 +52,11 @@ button:hover {
     background-color: var(--cor4);
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* .nao {
     position: absolute;
     top: 50%;
