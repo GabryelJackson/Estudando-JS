@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Assentos - Cinema</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .screen {
+      background-color: #444;
+      color: white;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin: 20px auto;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .seats {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .seat img {
+      width: 40px;
+      cursor: pointer;
+    }
+    .selected-seats {
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #5cb85c;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="screen">Tela</div>
+    <div class="seats" id="seats">
+      <!-- Seats will be generated dynamically -->
+    </div>
+    <div class="selected-seats">
+      <h3>Lugares Selecionados:</h3>
+      <ul id="selectedList"></ul>
+      <button id="submitBtn">Confirmar Reserva</button>
+    </div>
+  </div>
+
+  <script>
+    const seatStatus = {
+      free: "https://leoandrade.net/leoandrade.net/imagens/2.png",
+      selected: "https://leoandrade.net/leoandrade.net/imagens/3.png",
+      occupied: "https://leoandrade.net/leoandrade.net/imagens/1.png"
+    };
+
+    const rows = 4;
+    const cols = 8;
+    const seats = [];
+    const selectedSeats = new Set();
+    const storedSeats = JSON.parse(localStorage.getItem("reservedSeats")) || [];
+
+    function createSeats() {
+      const seatContainer = document.getElementById("seats");
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const seatId = `${row}-${col}`;
+          const seatDiv = document.createElement("div");
+          seatDiv.classList.add("seat");
+          seatDiv.dataset.id = seatId;
+
+          const img = document.createElement("img");
+          img.src = storedSeats.includes(seatId)
+            ? seatStatus.occupied
+            : seatStatus.free;
+
+          seatDiv.appendChild(img);
+          seatContainer.appendChild(seatDiv);
+
+          seats.push({ id: seatId, status: storedSeats.includes(seatId) ? "occupied" : "free" });
+
+          seatDiv.addEventListener("click", () => handleSeatClick(seatDiv, img));
+        }
+      }
+    }
+
+    function handleSeatClick(seatDiv, img) {
+      const seatId = seatDiv.dataset.id;
+      const seat = seats.find(s => s.id === seatId);
+
+      if (seat.status === "occupied") return;
+
+      if (selectedSeats.has(seatId)) {
+        selectedSeats.delete(seatId);
+        img.src = seatStatus.free;
+      } else {
+        selectedSeats.add(seatId);
+        img.src = seatStatus.selected;
+      }
+
+      updateSelectedList();
+    }
+
+    function updateSelectedList() {
+      const list = document.getElementById("selectedList");
+      list.innerHTML = "";
+
+      Array.from(selectedSeats).forEach(seatId => {
+        const li = document.createElement("li");
+        li.textContent = `Seat ${seatId}`;
+        list.appendChild(li);
+      });
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      selectedSeats.forEach(seatId => {
+        const seat = seats.find(s => s.id === seatId);
+        if (seat) {
+          seat.status = "occupied";
+        }
+      });
+
+      localStorage.setItem("reservedSeats", JSON.stringify(Array.from(selectedSeats)));
+      alert("Reservation Confirmed!");
+
+      window.location.reload();
+    });
+
+    createSeats();
+  </script>
+</body>
+</html>
